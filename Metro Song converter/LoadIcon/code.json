@@ -1,0 +1,382 @@
+{
+    "aU": {
+        "opcode": "looks_switchcostumeto",
+        "next": "cw",
+        "parent": "H",
+        "inputs": {
+            "COSTUME": [
+                1,
+                "e:"
+            ]
+        },
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    },
+    "e:": {
+        "opcode": "looks_costume",
+        "next": null,
+        "parent": "aU",
+        "inputs": {},
+        "fields": {
+            "COSTUME": [
+                "Lo Blank",
+                null
+            ]
+        },
+        "shadow": true,
+        "topLevel": false
+    },
+    "cx": {
+        "opcode": "control_repeat",
+        "next": null,
+        "parent": "cw",
+        "inputs": {
+            "TIMES": [
+                1,
+                [
+                    6,
+                    "96"
+                ]
+            ],
+            "SUBSTACK": [
+                2,
+                "e;"
+            ]
+        },
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    },
+    "e;": {
+        "opcode": "looks_nextcostume",
+        "next": null,
+        "parent": "cx",
+        "inputs": {},
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    },
+    "e=": {
+        "opcode": "event_whenbroadcastreceived",
+        "next": "cy",
+        "parent": null,
+        "inputs": {},
+        "fields": {
+            "BROADCAST_OPTION": [
+                "Loading circle",
+                "eR7`bw]$*fZ|:fXY0CQX"
+            ]
+        },
+        "shadow": false,
+        "topLevel": true,
+        "x": 48,
+        "y": 240
+    },
+    "e?": {
+        "opcode": "operator_equals",
+        "next": null,
+        "parent": "H",
+        "inputs": {
+            "OPERAND1": [
+                3,
+                [
+                    12,
+                    "Loading circle started?",
+                    "xs|w[;wfqWAkQxIpmT/|"
+                ],
+                [
+                    10,
+                    ""
+                ]
+            ],
+            "OPERAND2": [
+                1,
+                [
+                    10,
+                    "0"
+                ]
+            ]
+        },
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    },
+    "cy": {
+        "opcode": "data_setvariableto",
+        "next": "cz",
+        "parent": "e=",
+        "inputs": {
+            "VALUE": [
+                1,
+                [
+                    10,
+                    "1"
+                ]
+            ]
+        },
+        "fields": {
+            "VARIABLE": [
+                "Loading circle started?",
+                "xs|w[;wfqWAkQxIpmT/|"
+            ]
+        },
+        "shadow": false,
+        "topLevel": false
+    },
+    "cz": {
+        "opcode": "looks_setsizeto",
+        "next": "cA",
+        "parent": "cy",
+        "inputs": {
+            "SIZE": [
+                3,
+                [
+                    12,
+                    "Loading circle size",
+                    "FP[`En0QQ].7|7X(}rEa"
+                ],
+                [
+                    4,
+                    "100"
+                ]
+            ]
+        },
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    },
+    "cA": {
+        "opcode": "motion_gotoxy",
+        "next": "cB",
+        "parent": "cz",
+        "inputs": {
+            "X": [
+                3,
+                [
+                    12,
+                    "Loading circle X",
+                    "Fl/d-YD:|(cDV.jx)_iz"
+                ],
+                [
+                    4,
+                    "0"
+                ]
+            ],
+            "Y": [
+                3,
+                [
+                    12,
+                    "Loading circle Y",
+                    "^.2;Aqur@On~o,4g1xmz"
+                ],
+                [
+                    4,
+                    "0"
+                ]
+            ]
+        },
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    },
+    "e@": {
+        "opcode": "event_whenbroadcastreceived",
+        "next": "e[",
+        "parent": null,
+        "inputs": {},
+        "fields": {
+            "BROADCAST_OPTION": [
+                "Stop loading circle",
+                "mfz}m%%Glh5.[BQQEF)W"
+            ]
+        },
+        "shadow": false,
+        "topLevel": true,
+        "x": 554,
+        "y": 64
+    },
+    "e[": {
+        "opcode": "data_setvariableto",
+        "next": null,
+        "parent": "e@",
+        "inputs": {
+            "VALUE": [
+                1,
+                [
+                    10,
+                    "0"
+                ]
+            ]
+        },
+        "fields": {
+            "VARIABLE": [
+                "Loading circle started?",
+                "xs|w[;wfqWAkQxIpmT/|"
+            ]
+        },
+        "shadow": false,
+        "topLevel": false
+    },
+    "H": {
+        "opcode": "control_repeat_until",
+        "next": "aV",
+        "parent": "cC",
+        "inputs": {
+            "CONDITION": [
+                2,
+                "e?"
+            ],
+            "SUBSTACK": [
+                2,
+                "aU"
+            ]
+        },
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    },
+    "e]": {
+        "opcode": "looks_changeeffectby",
+        "next": null,
+        "parent": "cD",
+        "inputs": {
+            "CHANGE": [
+                1,
+                [
+                    4,
+                    "10"
+                ]
+            ]
+        },
+        "fields": {
+            "EFFECT": [
+                "GHOST",
+                null
+            ]
+        },
+        "shadow": false,
+        "topLevel": false
+    },
+    "cB": {
+        "opcode": "looks_seteffectto",
+        "next": "cE",
+        "parent": "cA",
+        "inputs": {
+            "VALUE": [
+                1,
+                [
+                    4,
+                    "0"
+                ]
+            ]
+        },
+        "fields": {
+            "EFFECT": [
+                "GHOST",
+                null
+            ]
+        },
+        "shadow": false,
+        "topLevel": false
+    },
+    "e^": {
+        "opcode": "looks_hide",
+        "next": null,
+        "parent": "aV",
+        "inputs": {},
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    },
+    "cC": {
+        "opcode": "looks_show",
+        "next": "H",
+        "parent": "cE",
+        "inputs": {},
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    },
+    "aV": {
+        "opcode": "control_repeat",
+        "next": "e^",
+        "parent": "H",
+        "inputs": {
+            "TIMES": [
+                1,
+                [
+                    6,
+                    "10"
+                ]
+            ],
+            "SUBSTACK": [
+                2,
+                "cD"
+            ]
+        },
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    },
+    "cw": {
+        "opcode": "control_wait",
+        "next": "cx",
+        "parent": "aU",
+        "inputs": {
+            "DURATION": [
+                1,
+                [
+                    5,
+                    "1"
+                ]
+            ]
+        },
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    },
+    "cD": {
+        "opcode": "looks_nextcostume",
+        "next": "e]",
+        "parent": "aV",
+        "inputs": {},
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    },
+    "cE": {
+        "opcode": "looks_gotofrontback",
+        "next": "cC",
+        "parent": "cB",
+        "inputs": {},
+        "fields": {
+            "FRONT_BACK": [
+                "front",
+                null
+            ]
+        },
+        "shadow": false,
+        "topLevel": false
+    },
+    "e_": {
+        "opcode": "event_whenflagclicked",
+        "next": "e`",
+        "parent": null,
+        "inputs": {},
+        "fields": {},
+        "shadow": false,
+        "topLevel": true,
+        "x": 48,
+        "y": 64
+    },
+    "e`": {
+        "opcode": "looks_hide",
+        "next": null,
+        "parent": "e_",
+        "inputs": {},
+        "fields": {},
+        "shadow": false,
+        "topLevel": false
+    }
+}
